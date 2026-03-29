@@ -24,7 +24,7 @@ body{
     width: 100vw;
     height: 100vh;
     object-fit: cover;
-    z-index: -2;
+    z-index: -3;
 }
 
 /* CAPA OSCURA */
@@ -36,12 +36,12 @@ body::before {
     width: 100%;
     height: 100%;
     background: rgba(0,0,20,0.6);
-    z-index: -1;
+    z-index: -2;
 }
 
 /* CONTENEDOR */
 .container{
-    background: rgba(255,255,255,0.05); /* correcto */
+    background: rgba(255,255,255,0.05);
     backdrop-filter: blur(75px);
     max-width: 700px;
     margin: 50px auto;
@@ -56,16 +56,17 @@ body::before {
 
 /* ANIMACIÓN */
 @keyframes fadeIn{
-    from{opacity:0; transform: translateY(20px);}
-    to{opacity:1; transform: translateY(0);}
+    from{
+        opacity:0; 
+        transform: translateY(20px);
+    }
+    to{
+        opacity:1; 
+        transform: translateY(0);
+    }
 }
 
 /* TITULOS */
-h1{
-    text-align: center;
-    color: #daaf37;
-}
-
 h2{
     margin-top: 25px;
     border-bottom: 2px solid #00d4ff;
@@ -106,7 +107,6 @@ h2{
 
 /* BOTON */
 .boton{
-    display: block;
     text-align: center;
     margin-top: 20px;
 }
@@ -118,13 +118,6 @@ h2{
     border-radius: 30px;
     text-decoration: none;
     font-weight: bold;
-    transition: 0.3s;
-}
-
-.boton a:hover{
-    background: white;
-    color: #004e92;
-    box-shadow: 0px 0px 15px #daa;
 }
 
 /* LOGO */
@@ -132,12 +125,6 @@ h2{
     display: block;
     margin: 0 auto 40px;
     width: 250px;
-    animation: zoomLogo 4s;
-}
-
-@keyframes zoomLogo{
-    0%{ transform: scale(0); opacity: 0; }
-    100%{ transform: scale(1); opacity: 1; }
 }
 
 /* GALERÍA */
@@ -148,40 +135,32 @@ h2{
     margin-top: 15px;
 }
 
-.item{
-    text-align: center;
-}
-
 .item img{
     width: 100%;
     border-radius: 10px;
 }
 
-.item p{
-    margin-top: 5px;
-    font-size: 14px;
-}
-
-/* MUNDO ANIMADO */
+/* 🌍 MUNDO */
 .mundo{
     position: fixed;
-    top: 90%;  
+    top: 50%;   /* 👈 CENTRADO */
     left: 50%;
-    width: 140vw;
-    height: 140vw;
+    width: 160vw;
+    height: 160vw;
 
     transform: translate(-50%, -50%);
     border-radius: 50%;
 
     background: radial-gradient(circle, rgba(0,150,255,0.7), transparent 70%);
-box-shadow: 0 0 120px rgba(0,150,255,0.6);
+    box-shadow: 0 0 120px rgba(0,150,255,0.6);
 
     animation: girarMundo 120s linear infinite;
 
     z-index: -1;
-    opacity: 0.9;
+    opacity: 0.8;
 }
 
+/* ANIMACIÓN MUNDO */
 @keyframes girarMundo{
     from{
         transform: translate(-50%, -50%) rotate(0deg);
@@ -191,13 +170,13 @@ box-shadow: 0 0 120px rgba(0,150,255,0.6);
     }
 }
 
-/* 📱 SOLO UNA VEZ */
+/* 📱 CELULAR */
 @media (max-width: 600px){
     .mundo{
-        width: 250vw;   
-        height: 250vw;
+        width: 300vw;
+        height: 300vw;
 
-        top: 105%;       
+        top: 50%;   /* 👈 IMPORTANTE */
         left: 50%;
 
         transform: translate(-50%, -50%);
@@ -205,6 +184,7 @@ box-shadow: 0 0 120px rgba(0,150,255,0.6);
         opacity: 1;
     }
 }
+
 </style>
 
 </head>
