@@ -20,16 +20,18 @@
 
         /* --- VIDEO DE FONDO --- */
         #bgVideo {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    transform: translate(-50%, -50%);
-    z-index: -3;
-    opacity: 0.6;
-}
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -3;
+            transform: translate(-50%, -50%); /* Centrado perfecto en PC */
+            object-fit: cover;
+            opacity: 0.6;
+        }
 
         /* Capa oscura para legibilidad */
         body::before {
@@ -59,18 +61,26 @@
             z-index: 1;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        @keyframes zoomLogo {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
 
         /* --- LOGO --- */
         .logo {
-            display: block;
-            margin: 0 auto 30px;
-            width: 220px;
-            height: auto;
-        }
+    display: block;
+    margin: 0 auto 30px;
+    width: 220px;
+    height: auto;
+
+    animation: zoomLogo 1s ease 0.5s;
+}
 
         /* --- TÍTULOS Y SERVICIOS --- */
         h2 {
@@ -137,32 +147,59 @@
         }
 
         /* --- AJUSTES PARA CELULAR (IMPORTANTE) --- */
-        @media (max-width: 600px) {
-    .container {
-        background: rgba(0, 0, 0, 0.15); /* más transparente en celular */
-    }
+        @media (max-width: 500px) {
+
+    #bgVideo {
+    width: 225%;
+    max-width: 600px;
+    height: auto;
+
+    transform: translate(-50%, -50%);
+    
+    min-width: unset;
+    min-height: unset;
+
+    object-fit: contain;
 }
-
-
-
+    
     .container {
-        margin: 20px auto;
-        padding: 25px 15px;
-        width: 88%;
-    }
+    margin: 20px auto;
+    padding: 25px 15px;
+    width: 80%; /* un poco más angosto */
+
+    background: rgba(255, 255, 255, 0.02); /* transparencia */
+    backdrop-filter: blur(9px); /* menos blur */
+}
 
     .logo {
         width: 160px;
     }
 
+    /* 👇 AQUÍ DENTRO */
     .galeria {
         grid-template-columns: 1fr;
     }
+}
+.item img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
+/* 🖱️ PC */
+.item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-            .galeria {
-                grid-template-columns: 1fr;
-            }
+/* PC */
+.item:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.6);
+}
+
+/* CELULAR */
+.item:active {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.6);
+} 
         
     </style>
 </head>
