@@ -149,14 +149,18 @@ h2{
     position: fixed;
     top: 50%;
     left: 50%;
-    width: auto;
-    height: 120vh;
+
+    width: 70vw;     /* 👈 controla tamaño en PC */
+    height: 70vw;
+
+    max-width: 900px;
+    max-height: 900px;
 
     transform: translate(-50%, -50%);
-
-    object-fit: contain; /* 👈 IMPORTANTE */
+    object-fit: contain;
 
     z-index: -3;
+    opacity: 0.9;
 }
 
 /* ANIMACIÓN MUNDO */
@@ -172,16 +176,16 @@ h2{
 /* 📱 CELULAR */
 @media (max-width: 600px){
     #bgVideo{
-        height: 100vh;
-        width: auto;
+        width: 90vw;
+        height: 90vw;
     }
+}
 
     .mundo{
         width: 100vh;
         height: 100vh;
         top: 50%;
     }
-}
 
 </style>
 
