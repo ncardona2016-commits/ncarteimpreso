@@ -143,7 +143,7 @@ h2{
 /* 🌍 MUNDO */
 .mundo{
     position: fixed;
-    top: 50%;   /* 👈 CENTRADO */
+    top: 50%;
     left: 50%;
     width: 160vw;
     height: 160vw;
@@ -151,13 +151,15 @@ h2{
     transform: translate(-50%, -50%);
     border-radius: 50%;
 
-    background: radial-gradient(circle, rgba(0,150,255,0.7), transparent 70%);
-    box-shadow: 0 0 120px rgba(0,150,255,0.6);
+    background: radial-gradient(circle, rgba(0,150,255,0.9) 0%, rgba(0,80,150,0.6) 40%, rgba(0,0,0,0) 80%);
+
+    box-shadow: 0 0 120px rgba(0,150,255,0.7);
 
     animation: girarMundo 120s linear infinite;
 
     z-index: -1;
-    opacity: 0.8;
+    opacity: 1;
+    filter: contrast(1.2);
 }
 
 /* ANIMACIÓN MUNDO */
@@ -175,13 +177,11 @@ h2{
     .mundo{
         width: 300vw;
         height: 300vw;
-
-        top: 50%;   /* 👈 IMPORTANTE */
-        left: 50%;
-
-        transform: translate(-50%, -50%);
+        top: 50%;
 
         opacity: 1;
+        filter: brightness(1.4);
+        filter: contrast(1.2);
     }
 }
 
