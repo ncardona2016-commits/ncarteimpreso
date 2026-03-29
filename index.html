@@ -20,18 +20,18 @@
 
         /* --- VIDEO DE FONDO --- */
         #bgVideo {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: -3;
-            transform: translate(-50%, -50%); /* Centrado perfecto en PC */
-            object-fit: cover;
-            opacity: 0.6;
-        }
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -3;
+    transform: translate(-50%, -50%) scale(1.5);
+    object-fit: cover;
+    opacity: 0.6;
+}
 
         /* Capa oscura para legibilidad */
         body::before {
@@ -140,20 +140,31 @@
 
         /* --- AJUSTES PARA CELULAR (IMPORTANTE) --- */
         @media (max-width: 600px) {
-            #bgVideo {
-                /* Aumentamos la escala a 3.0 para que el mundo sea gigante 
-                   y se vea cortado por los bordes */
-                transform: translate(-50%, -50%) scale(3.0); 
-            }
-            .container {
-                margin: 20px auto;
-                padding: 20px;
-                width: 85%; /* Contenedor más ajustado para que luzca el fondo */
-            }
+    #bgVideo {
+        transform: translate(-50%, -50%) scale(1.8);
+        min-height: 100%;
+        object-position: center;
+    }
+
+    .container {
+        margin: 20px auto;
+        padding: 25px 15px;
+        width: 88%;
+    }
+
+    .logo {
+        width: 160px;
+    }
+
+    .galeria {
+        grid-template-columns: 1fr;
+    }
+}
+
             .galeria {
                 grid-template-columns: 1fr;
             }
-        }
+        
     </style>
 </head>
 
