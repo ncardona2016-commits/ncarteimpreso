@@ -23,13 +23,11 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -3;
-    transform: translate(-50%, -50%) scale(1.5);
+    width: 100vw;
+    height: 100vh;
     object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -3;
     opacity: 0.6;
 }
 
@@ -141,10 +139,9 @@
         /* --- AJUSTES PARA CELULAR (IMPORTANTE) --- */
         @media (max-width: 600px) {
     #bgVideo {
-        transform: translate(-50%, -50%) scale(1.2);
-        min-height: 100%;
-        object-position: center;
+        transform: translate(-50%, -50%) scale(1.15);
     }
+}
 
     .container {
         margin: 20px auto;
@@ -159,7 +156,7 @@
     .galeria {
         grid-template-columns: 1fr;
     }
-}
+
 
             .galeria {
                 grid-template-columns: 1fr;
