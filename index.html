@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
+       
         /* --- ESTILOS GENERALES --- */
         body {
             background: #000;
@@ -17,6 +18,7 @@
             padding: 0;
             overflow-x: hidden;
         }
+        
 
         /* --- VIDEO DE FONDO --- */
         #bgVideo {
@@ -32,6 +34,9 @@
             object-fit: cover;
             opacity: 0.6;
         }
+        .container {
+    position: relative;
+}
 
         /* Capa oscura para legibilidad */
         body::before {
@@ -51,7 +56,7 @@
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
             max-width: 700px;
-            margin: 50px auto;
+            margin: 100px auto;
             padding: 30px;
             border-radius: 20px;
             box-shadow: 0px 10px 30px rgba(0,0,0,0.8);
@@ -61,9 +66,9 @@
             z-index: 1;
         }
 
-        @keyframes zoomLogo {
+       @keyframes logoEntrada {
     0% {
-        transform: scale(0.5);
+        transform: scale(3);  /* MÁS grande para que se note */
         opacity: 0;
     }
     100% {
@@ -72,14 +77,11 @@
     }
 }
 
-        /* --- LOGO --- */
-        .logo {
-    display: block;
-    margin: 0 auto 30px;
-    width: 220px;
-    height: auto;
-
-    animation: zoomLogo 1s ease 0.5s;
+    
+/* cuando está oculto */
+.logo-hidden {
+    opacity: 0;
+    pointer-events: none;
 }
 
         /* --- TÍTULOS Y SERVICIOS --- */
@@ -127,24 +129,85 @@
         }
 
         /* --- BOTONES Y REDES --- */
-        .boton { text-align: center; margin-top: 30px; }
+        .boton {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
         .boton a {
-            background: #daaf37;
-            color: black;
-            padding: 12px 25px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-        }
+    background: #daaf37;
+    color: rgb(0, 0, 0);
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
 
-        .redes { text-align: center; margin-top: 25px; }
-        .redes a {
-            margin: 0 10px;
-            font-size: 28px;
-            color: #daaf37;
-            text-decoration: none;
-        }
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 🔥 EFECTO FLOTAR */
+.boton a:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.5);
+}
+
+.boton a:hover {
+    background: white;      /* fondo blanco */
+    color: #25D366;         /* verde WhatsApp */
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.3);
+}
+
+        
+/* 🖱️ EFECTO AL PASAR EL MOUSE */
+/* --- REDES SOCIALES --- */
+/* --- REDES PRO --- */
+.redes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 15px;
+}
+
+.redes a {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    background: #daaf37; /* amarillo */
+    color: black;        /* ícono negro */
+
+    font-size: 22px;
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+/* 🔥 FACEBOOK */
+.redes a:nth-child(1):hover {
+    background: white;        /* fondo blanco */
+    color: #1877f2;           /* ícono azul */
+    transform: translateY(-10px) scale(1.15);
+    box-shadow: 0px 10px 25px rgba(24,119,242,0.6);
+}
+
+/* 🔥 INSTAGRAM */
+.redes a:nth-child(2):hover {
+    background: white;        /* fondo blanco */
+    color: #E1306C;          /* ícono rosado (simplificado) */
+    transform: translateY(-10px) scale(1.15);
+    box-shadow: 0px 10px 25px rgba(253,29,29,0.5);
+}
+
+/* 📱 CELULAR */
+.redes a:active {
+    transform: translateY(-10px) scale(1.15);
+}
 
         /* --- AJUSTES PARA CELULAR (IMPORTANTE) --- */
         @media (max-width: 500px) {
@@ -163,13 +226,14 @@
 }
     
     .container {
-    margin: 20px auto;
+    margin: 30px auto;
     padding: 25px 15px;
     width: 80%; /* un poco más angosto */
 
     background: rgba(255, 255, 255, 0.02); /* transparencia */
     backdrop-filter: blur(9px); /* menos blur */
 }
+
 
     .logo {
         width: 160px;
@@ -200,21 +264,75 @@
     transform: translateY(-10px) scale(1.03);
     box-shadow: 0px 10px 25px rgba(0,0,0,0.6);
 } 
-        
+       nav a {
+    color: white;            /* color blanco */
+    text-decoration: none;   /* quita la línea */
+    font-weight: bold;
+    transition: 0.3s;
+}
+.redes a:active {
+    transform: translateY(-10px) scale(1.15);
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.5);
+}
+nav a:hover {
+    color: #daaf37;          /* dorado al pasar el mouse */
+} 
+.logo-header {
+    position: fixed;
+    top: 25px;
+    left: calc(50% - 350px); /* ← alineado con el container */
+    width: 155px;
+    z-index: 100;
+}
+nav {
+    position: fixed;
+
+    top: 20px;     /* 🔼🔽 mueve arriba / abajo */
+    right: 600px;   /* ⬅️➡️ mueve desde la derecha */
+
+    /* alternativas */
+    /* left: 40px;  ← mueve desde la izquierda */
+}
+nav {
+    position: fixed;
+    top: 70px;
+    right: 650px;
+
+    display: flex;     /* los pone en línea */
+    gap: 100px;         /* 🔥 separación entre ellos */
+}
+nav i {
+    margin-right: 12px;
+    font-size: 18px;
+    color: #daaf37;
+}
     </style>
+    
 </head>
 
 <body>
+    <img src="logo.png" class="logo-header">
+
+     <nav>
+ <a href="#servicios">
+    <i class="fa-solid fa-bars"></i> Servicios
+</a>
+  <a href="#productos">Productos</a>
+  <a href="#contacto">Contacto</a>
+</nav>
+
+
 
 <video autoplay muted loop playsinline preload="auto" id="bgVideo">
     <source src="erth.mp4" type="video/mp4">
 </video>
 
+
+
 <div class="container">
 
-    <img src="logo.png" alt="Logo NC Arte Impreso" class="logo">
-
-    <p style="text-align: center; font-size: 18px; color: #f8fafa;">
+    
+    <p style="text-align: center; font-size: 18px; color: #f8fafa; margin-top: 10px;">
         Diseños Personalizados y creatividad sin Límites.
     </p>
 
@@ -273,6 +391,7 @@
             <i class="fa-brands fa-instagram"></i>
         </a>
     </div>
+    
 
 </div>
 
@@ -282,6 +401,26 @@
     video.addEventListener('suspend', function() {
         video.play();
     });
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    let lastScroll = 0;
+    const logo = document.querySelector(".logo-header");
+
+    window.addEventListener("scroll", () => {
+        let currentScroll = window.scrollY;
+
+        if (currentScroll > lastScroll) {
+            // bajando → ocultar
+            logo.classList.add("logo-hidden");
+        } else {
+            // subiendo → mostrar
+            logo.classList.remove("logo-hidden");
+        }
+
+        lastScroll = currentScroll;
+    });
+});
 </script>
 
 </body>
