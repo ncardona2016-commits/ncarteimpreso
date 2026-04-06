@@ -211,7 +211,25 @@
 
         /* --- AJUSTES PARA CELULAR (IMPORTANTE) --- */
         @media (max-width: 500px) {
+.logo-header {
+    position: relative;   /* deja de ser fixed */
+    top: 0;
+    left: 0;
+    transform: none;
+    display: block;
+    margin: 10px auto;   /* lo centra */
+}
+nav {
+    position: relative;  /* quita el fixed */
+    top: 0;
+    right: 0;
 
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    margin-top: 10px;
+}
     #bgVideo {
     width: 225%;
     max-width: 600px;
@@ -424,4 +442,4 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 </body>
-</html>
+</html>           
