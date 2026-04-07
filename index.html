@@ -9,7 +9,7 @@
 
     <style>
        
-       
+        /* --- ESTILOS GENERALES --- */
         body {
             background: #000;
             color: white;
@@ -19,6 +19,8 @@
             overflow-x: hidden;
         }
         
+
+        /* --- VIDEO DE FONDO --- */
         #bgVideo {
             position: fixed;
             top: 50%;
@@ -28,7 +30,7 @@
             width: auto;
             height: auto;
             z-index: -3;
-            transform: translate(-50%, -50%); 
+            transform: translate(-50%, -50%); /* Centrado perfecto en PC */
             object-fit: cover;
             opacity: 0.6;
         }
@@ -36,7 +38,7 @@
     position: relative;
 }
 
-        
+        /* Capa oscura para legibilidad */
         body::before {
             content: "";
             position: fixed;
@@ -48,7 +50,7 @@
             z-index: -2;
         }
 
-        
+        /* --- CONTENEDOR (Glassmorphism) --- */
         .container {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(15px);
@@ -66,7 +68,7 @@
 
        @keyframes logoEntrada {
     0% {
-        transform: scale(3);  
+        transform: scale(3);  /* MÁS grande para que se note */
         opacity: 0;
     }
     100% {
@@ -76,13 +78,13 @@
 }
 
     
-
+/* cuando está oculto */
 .logo-hidden {
     opacity: 0;
     pointer-events: none;
 }
 
-        
+        /* --- TÍTULOS Y SERVICIOS --- */
         h2 {
             margin-top: 25px;
             border-bottom: 2px solid #00d4ff;
@@ -105,7 +107,7 @@
             text-align: center;
         }
 
-        
+        /* --- GALERÍA --- */
         .galeria {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -126,7 +128,7 @@
             margin-top: 5px;
         }
 
-        
+        /* --- BOTONES Y REDES --- */
         .boton {
     display: flex;
     justify-content: center;
@@ -143,7 +145,7 @@
 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
+/* 🔥 HEADER PARA PC */
 .header {
     position: fixed;
     top: 20px;
@@ -160,35 +162,37 @@
     z-index: 100;
 }
 
-
+/* LOGO */
 .logo-header {
     position: relative;
     width: 130px;
     margin: 0;
 }
 
-
+/* MENÚ */
 nav {
     position: relative;
     display: flex;
     gap: 30px;
 }
 
-
+/* 🔥 EFECTO FLOTAR */
 .boton a:hover {
     transform: translateY(-10px);
     box-shadow: 0px 10px 20px rgba(0,0,0,0.5);
 }
 
 .boton a:hover {
-    background: white;     
-    color: #25D366;        
+    background: white;      /* fondo blanco */
+    color: #25D366;         /* verde WhatsApp */
     transform: translateY(-10px);
     box-shadow: 0px 10px 20px rgba(0,0,0,0.3);
 }
 
         
-
+/* 🖱️ EFECTO AL PASAR EL MOUSE */
+/* --- REDES SOCIALES --- */
+/* --- REDES PRO --- */
 .redes {
     display: flex;
     justify-content: center;
@@ -205,35 +209,37 @@ nav {
     align-items: center;
 
     border-radius: 50%;
-    background: #daaf37; 
-    color: black;        
+    background: #daaf37; /* amarillo */
+    color: black;        /* ícono negro */
+
     font-size: 22px;
     text-decoration: none;
 
     transition: all 0.3s ease;
 }
 
-
+/* 🔥 FACEBOOK */
 .redes a:nth-child(1):hover {
-    background: white;        
-    color: #1877f2;          
+    background: white;        /* fondo blanco */
+    color: #1877f2;           /* ícono azul */
     transform: translateY(-10px) scale(1.15);
     box-shadow: 0px 10px 25px rgba(24,119,242,0.6);
 }
 
+/* 🔥 INSTAGRAM */
 .redes a:nth-child(2):hover {
-    background: white;       
-    color: #E1306C;         
+    background: white;        /* fondo blanco */
+    color: #E1306C;          /* ícono rosado (simplificado) */
     transform: translateY(-10px) scale(1.15);
     box-shadow: 0px 10px 25px rgba(253,29,29,0.5);
 }
 
-
+/* 📱 CELULAR */
 .redes a:active {
     transform: translateY(-10px) scale(1.15);
 }
 
-        
+        /* --- AJUSTES PARA CELULAR (IMPORTANTE) --- */
         @media (max-width: 500px) {
 
     
@@ -252,11 +258,11 @@ nav {
     transform: translate(-50%, -50%);
     object-fit: contain;
 }
-
+    /* 👇 AQUÍ DENTRO */
     .galeria {
         grid-template-columns: 1fr;
     }
-    
+    /* LOGO CENTRADO ARRIBA */
 .logo-header {
     position: relative !important;
     display: block;
@@ -267,7 +273,7 @@ nav {
     transform: none;
 }
 
-
+/* MENÚ DEBAJO DEL LOGO */
 nav {
     position: relative !important;
     display: flex;
@@ -275,10 +281,10 @@ nav {
     gap: 15px;
     font-size: 13px;
 
-    margin-bottom: 15px;
+    margin-bottom: 15px; /* 🔥 separación con el container */
 }
 
-
+/* OPCIONAL: evita que se rompa el texto */
 nav a {
     white-space: nowrap;
 }
@@ -287,25 +293,25 @@ nav a {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
+/* 🖱️ PC */
 .item {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
+/* PC */
 .item:hover {
     transform: translateY(-10px) scale(1.03);
     box-shadow: 0px 10px 25px rgba(0,0,0,0.6);
 }
 
-
+/* CELULAR */
 .item:active {
     transform: translateY(-10px) scale(1.03);
     box-shadow: 0px 10px 25px rgba(0,0,0,0.6);
 } 
        nav a {
-    color: white;            
-    text-decoration: none;   
+    color: white;            /* color blanco */
+    text-decoration: none;   /* quita la línea */
     font-weight: bold;
     transition: 0.3s;
 }
@@ -314,7 +320,7 @@ nav a {
     box-shadow: 0px 10px 20px rgba(0,0,0,0.5);
 }
 nav a:hover {
-    color: #daaf37;          
+    color: #daaf37;          /* dorado al pasar el mouse */
 } 
 .logo-header {
     position: fixed;
@@ -424,7 +430,7 @@ nav {
 
 <script>
     var video = document.getElementById('bgVideo');
-    
+    // Esto fuerza al video a seguir reproduciéndose si el navegador intenta pausarlo
     video.addEventListener('suspend', function() {
         video.play();
     });
@@ -438,10 +444,10 @@ document.addEventListener("DOMContentLoaded", function () {
         let currentScroll = window.scrollY;
 
         if (currentScroll > lastScroll) {
-          
+            // bajando → ocultar
             logo.classList.add("logo-hidden");
         } else {
-         
+            // subiendo → mostrar
             logo.classList.remove("logo-hidden");
         }
 
