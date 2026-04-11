@@ -9,7 +9,7 @@
 
     <style>
        
-        /* --- ESTILOS GENERALES --- */
+        
         body {
             background: #000;
             color: white;
@@ -20,7 +20,7 @@
         }
         
 
-        /* --- VIDEO DE FONDO --- */
+        
         #bgVideo {
             position: fixed;
             top: 50%;
@@ -30,12 +30,12 @@
             width: auto;
             height: auto;
             z-index: -3;
-            transform: translate(-50%, -50%); /* Centrado perfecto en PC */
+            transform: translate(-50%, -50%); 
             object-fit: cover;
             opacity: 0.6;
         }
         
-        /* Capa oscura para legibilidad */
+       
         body::before {
             content: "";
             position: fixed;
@@ -47,12 +47,12 @@
             z-index: -2;
         }
 
-        /* --- CONTENEDOR (Glassmorphism) --- */
+       
         .container {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-            max-width: 1000px;
+            max-width: 800px;
             margin: 100px auto;
             padding: 30px;
             border-radius: 20px;
@@ -68,7 +68,7 @@
 
        @keyframes logoEntrada {
     0% {
-        transform: scale(3);  /* MÁS grande para que se note */
+        transform: scale(3);  
         opacity: 0;
     }
     100% {
@@ -76,7 +76,7 @@
         opacity: 1;
     }
 }
-        /* --- TÍTULOS Y SERVICIOS --- */
+        
         h2 {
             margin-top: 25px;
             border-bottom: 2px solid #00d4ff;
@@ -99,13 +99,12 @@
             text-align: center;
         }
 
-        /* --- GALERÍA --- */
+        
         .galeria {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-            margin-top: 20px;
-        }
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
 
         .item img {
             width: 100%;
@@ -115,16 +114,29 @@
         }
 
         .item p {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
+    margin-top: 10px;
+    text-align: center;
     color: white;
-    background: rgba(0,0,0,0.5);
-    padding: 5px 10px;
-    border-radius: 20px;
+    font-weight: 500;
+    position: static;
+    background: none;
 }
 
-        /* --- BOTONES Y REDES --- */
+.item {
+    background: rgba(255,255,255,0.05);
+    padding: 10px;
+    border-radius: 15px;
+}
+.item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0px 15px 35px rgba(0,0,0,0.7);
+}
+
+        
         .boton {
     display: flex;
     justify-content: center;
@@ -141,10 +153,10 @@
 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-/* 🔥 HEADER PARA PC */
+
 .header {
     position: relative;
-    top: 85px; /* 🔥 aquí bajas todo */
+    top: 85px; 
     left: 50%;
     transform: translateX(-50%);
 
@@ -158,30 +170,30 @@
     z-index: 100;
 }
 
-/* MENÚ */
+
 nav {
     display: flex;
     gap: 100px;
     margin-top: 25px;
 }
 
-/* 🔥 EFECTO FLOTAR */
+
 .boton a:hover {
     transform: translateY(-10px);
     box-shadow: 0px 10px 20px rgba(0,0,0,0.5);
 }
 
 .boton a:hover {
-    background: white;      /* fondo blanco */
-    color: #25D366;         /* verde WhatsApp */
+    background: white;      
+    color: #25D366;         
     transform: translateY(-10px);
     box-shadow: 0px 10px 20px rgba(0,0,0,0.3);
 }
 
         
-/* 🖱️ EFECTO AL PASAR EL MOUSE */
-/* --- REDES SOCIALES --- */
-/* --- REDES PRO --- */
+
+
+
 .redes {
     display: flex;
     justify-content: center;
@@ -198,8 +210,8 @@ nav {
     align-items: center;
 
     border-radius: 50%;
-    background: #daaf37; /* amarillo */
-    color: black;        /* ícono negro */
+    background: #daaf37; 
+    color: black;        
 
     font-size: 22px;
     text-decoration: none;
@@ -207,28 +219,28 @@ nav {
     transition: all 0.3s ease;
 }
 
-/* 🔥 FACEBOOK */
+
 .redes a:nth-child(1):hover {
-    background: white;        /* fondo blanco */
-    color: #1877f2;           /* ícono azul */
+    background: white;        
+    color: #1877f2;          
     transform: translateY(-10px) scale(1.15);
     box-shadow: 0px 10px 25px rgba(24,119,242,0.6);
 }
 
-/* 🔥 INSTAGRAM */
+
 .redes a:nth-child(2):hover {
-    background: white;        /* fondo blanco */
-    color: #E1306C;          /* ícono rosado (simplificado) */
+    background: white;        
+    color: #E1306C;          
     transform: translateY(-10px) scale(1.15);
     box-shadow: 0px 10px 25px rgba(253,29,29,0.5);
 }
 
-/* 📱 CELULAR */
+
 .redes a:active {
     transform: translateY(-10px) scale(1.15);
 }
 
-        /* --- AJUSTES PARA CELULAR (IMPORTANTE) --- */
+      
         @media (max-width: 500px) {
 
     
@@ -248,13 +260,13 @@ nav {
     transform: translate(-50%, -50%);
     object-fit: contain;
 }
-    /* 👇 AQUÍ DENTRO */
+   
     .galeria {
         grid-template-columns: 1fr;
     }
     @media (max-width: 500px) {
 
-    /* HEADER EN COLUMNA */
+   
     .header {
         position: relative !important;
         flex-direction: column;
@@ -263,7 +275,7 @@ nav {
         top: 0;
     }
 
-    /* LOGO CENTRADO */
+    
     .logo-header {
     position: relative !important;
     left: 0 !important;
@@ -272,7 +284,7 @@ nav {
     display: block;
     width: 110px;
 }
-    /* MENÚ ABAJO DEL LOGO */
+    
     nav {
         position: relative !important;
         display: flex;
@@ -285,7 +297,7 @@ nav {
 
 }
 
-/* OPCIONAL: evita que se rompa el texto */
+
 nav a {
     white-space: nowrap;
 }
@@ -294,25 +306,25 @@ nav a {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* 🖱️ PC */
+
 .item {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* PC */
+
 .item:hover {
     transform: translateY(-10px) scale(1.03);
     box-shadow: 0px 10px 25px rgba(0,0,0,0.6);
 }
 
-/* CELULAR */
+
 .item:active {
     transform: translateY(-10px) scale(1.03);
     box-shadow: 0px 10px 25px rgba(0,0,0,0.6);
 } 
        nav a {
-    color: white;            /* color blanco */
-    text-decoration: none;   /* quita la línea */
+    color: white;           
+    text-decoration: none;  
     font-weight: bold;
     transition: 0.3s;
 }
@@ -321,20 +333,20 @@ nav a {
     box-shadow: 0px 10px 20px rgba(0,0,0,0.5);
 }
 nav a:hover {
-    color: #daaf37;          /* dorado al pasar el mouse */
+    color: #daaf37;          
 } 
 .logo-header {
     width: 150px;
-    margin-left: 10px; /* prueba 10, 20, 30 */
-}
-/* MINI GALERIA DENTRO DE CADA ITEM */
-.mini-galeria {
-    display: flex;
-    height: 250px;
-    overflow: hidden;
+    margin-left: 10px; 
 }
 
-/* CADA IMAGEN */
+.mini-galeria img {
+    width: 100%;
+    height: auto; 
+    object-fit: cover;
+}
+
+
 .mini-galeria img {
     flex: 1;
     width: 100%;
@@ -343,25 +355,71 @@ nav a:hover {
     cursor: pointer;
 }
 
-/* EFECTO ACORDEÓN INTERNO */
+
 .mini-galeria img:hover {
-    flex: 3; /* se expande */
-    transform: scale(1.05); /* efecto globo */
+    flex: 3;
+    transform: scale(1.05);
 }
 
-/* TEXTO */
+
 .item {
     position: relative;
 }
 
-.item p {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
+
+.mini-galeria {
+    display: flex;
+    height: 250px;
+    overflow: hidden;
+}
+
+
+.mini-galeria img {
+    width: 100%;
+    object-fit: cover;
+    transition: all 0.4s ease;
+}
+
+
+.mini-galeria img {
+    flex: 0;
+    opacity: 0;
+}
+
+
+.mini-galeria img:first-child {
+    flex: 1;
+    opacity: 1;
+}
+
+
+.mini-galeria:hover img {
+    flex: 1;
+    opacity: 1;
+}
+
+
+.mini-galeria img:hover {
+    flex: 3;
+    transform: scale(1.05);
+}
+.mini-galeria img {
+    min-width: 0;
+}
+.titulo-item {
+    margin-top: 2px; 
+    text-align: center;
     color: white;
-    background: rgba(0,0,0,0.5);
-    padding: 5px 10px;
-    border-radius: 20px;
+    font-weight: 500;
+}
+.bloque-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.bloque-item {
+    display: flex;
+    flex-direction: column;
 }
     </style>
     
@@ -413,17 +471,22 @@ nav a:hover {
             <img src="img2.jpg" alt="Playeras">
             <p>Playeras personalizadas</p>
         </div>
-        <div class="item">
+        
+    <div class="bloque-item">
 
-    <div class="mini-galeria">
-        <img src="img3.jpg">
-        <img src="taza2.jpg">
-        <img src="taza3.jpg">
+    <div class="item">
+        <div class="mini-galeria">
+            <img src="img3.jpg">
+            <img src="taza2.jpg">
+            <img src="taza3.jpg">
+            <img src="taza4.jpg">
+        </div>
     </div>
 
-    <p>Tazas personalizadas</p>
+    <p class="titulo-item">Tazas y Pachones ersonalizadas</p>
 
 </div>
+
         <div class="item">
             <img src="img4.jpg" alt="Gorras">
             <p>Gorras personalizadas</p>
@@ -458,7 +521,7 @@ nav a:hover {
 
 <script>
     var video = document.getElementById('bgVideo');
-    // Esto fuerza al video a seguir reproduciéndose si el navegador intenta pausarlo
+    
     video.addEventListener('suspend', function() {
         video.play();
     });
@@ -472,10 +535,10 @@ document.addEventListener("DOMContentLoaded", function () {
         let currentScroll = window.scrollY;
 
         if (currentScroll > lastScroll) {
-            // bajando → ocultar
+           
             logo.classList.add("logo-hidden");
         } else {
-            // subiendo → mostrar
+           
             logo.classList.remove("logo-hidden");
         }
 
